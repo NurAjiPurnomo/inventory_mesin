@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Admin\BarangController;
+use App\Http\Controllers\Admin\BarangRusakController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
 use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
 use App\Http\Controllers\Frontend\ReservationController as FrontendReservationController;
@@ -56,6 +59,10 @@ Route::middleware(['auth' , 'admin'])->name('admin.')->prefix('admin')->group(fu
     Route::resource('/menus' , MenuController::class);
     Route::resource('/tables' , TableController::class);
     Route::resource('/reservations' , ReservationController::class);
+    Route::resource('/barangs' , BarangController::class);
+    Route::resource('/barang_rusak', BarangRusakController::class);
+    Route::resource('/users', UserController::class);
+
 });
 
 require __DIR__.'/auth.php';
