@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\BarangController;
 use App\Http\Controllers\Admin\BarangRusakController;
+use App\Http\Controllers\Admin\PeminjamanBarangController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
 use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
@@ -61,6 +62,7 @@ Route::middleware(['auth' , 'admin'])->name('admin.')->prefix('admin')->group(fu
     Route::resource('/reservations' , ReservationController::class);
     Route::resource('/barangs' , BarangController::class);
     Route::resource('/barang_rusak', BarangRusakController::class);
+    Route::resource('/peminjaman', PeminjamanBarangController::class);
     Route::resource('/users', UserController::class);
 
 });

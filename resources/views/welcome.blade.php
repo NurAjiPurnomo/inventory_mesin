@@ -58,7 +58,7 @@
             <p
               class="text-left text-sm text-gray-800 mt-0 sm:max-w-md lg:text-lg md:max-w-3xl"
             >
-              <span class="text-red-600 font-semibold">Resto & Cafe Mas Bro</span>
+              <span class="text-red-600 font-semibold">Resto & Cafe Mas </span>
               berdiri sejak 2015 di Jl. Semanggi Raya, Palaraya, Tegal. Kami hadir
               untuk menyuguhkan pengalaman kuliner khas dengan suasana hangat dan
               pelayanan ramah. Dengan menu lezat yang terus berkembang, Mas Bro

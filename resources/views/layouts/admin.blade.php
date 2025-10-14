@@ -54,8 +54,8 @@
                     :active="request()->routeIs('admin.barang_rusak.index')">
                     {{ __('Data Barang Rusak') }}
                 </x-admin-nav-link>
-                <x-admin-nav-link :href="route('admin.reservations.index')"
-                    :active="request()->routeIs('admin.reservations.index')">
+                <x-admin-nav-link :href="route('admin.peminjaman.index')"
+                    :active="request()->routeIs('admin.peminjaman.index')">
                     {{ __('Peminjaman Barang') }}
                 </x-admin-nav-link>
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
