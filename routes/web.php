@@ -7,11 +7,12 @@ use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\BarangController;
 use App\Http\Controllers\Admin\BarangRusakController;
-use App\Http\Controllers\Admin\PeminjamanBarangController;
+use App\Http\Controllers\Admin\PeminjamanController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
 use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
 use App\Http\Controllers\Frontend\ReservationController as FrontendReservationController;
+use App\Http\Controllers\Frontend\PeminjamanController as FrontPeminjamanBarangController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/',[FrontPeminjamanBarangController::class, 'create'])->name('peminjaman.create');
 Route::get('/',[WelcomeController::class, 'index']);
 
+// Route::post('/peminjaman', [FrontPeminjamanBarangController::class, 'store'])->name('peminjaman.store');
 Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
@@ -62,7 +65,8 @@ Route::middleware(['auth' , 'admin'])->name('admin.')->prefix('admin')->group(fu
     Route::resource('/reservations' , ReservationController::class);
     Route::resource('/barangs' , BarangController::class);
     Route::resource('/barang_rusak', BarangRusakController::class);
-    Route::resource('/peminjaman', PeminjamanBarangController::class);
+    Route::resource('/peminjaman', PeminjamanController::class);
+    Route::post('/peminjaman/{id}/status', [PeminjamanController::class, 'updateStatus'])->name('admin.peminjaman.updateStatus');
     Route::resource('/users', UserController::class);
 
 });
